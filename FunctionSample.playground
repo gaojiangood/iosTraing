@@ -1,0 +1,26 @@
+import UIKit
+
+var str = "Hello, playground"
+
+//func 関数名（外部名　内部名：型。）-> 戻り値型
+func point(top y:Int, left x: Int) -> String {
+    return "x:\(x) y:\(y)"
+}
+
+let p = point(top: 10, left: 4)
+
+print(p)
+
+var dot = point
+
+//dot は関数として機能する
+print(dot(20,30))
+
+//高階関数を定義
+func loggingExcute(targetFunc:(Int,Int)->String){
+    print("before excute")
+    print(targetFunc(30,20))
+    print("after excute")
+}
+
+loggingExcute(targetFunc: dot)
