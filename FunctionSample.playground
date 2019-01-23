@@ -24,3 +24,20 @@ func loggingExcute(targetFunc:(Int,Int)->String){
 }
 
 loggingExcute(targetFunc: dot)
+
+// 操作対象の配列
+let numbers = [11, 2, 5, -8, 0, 6]
+
+func isOverTen(number:Int)-> Bool{
+    return number > 10
+}
+
+let overTen = numbers.filter(isOverTen)
+print(overTen)
+
+//クロージャ
+let overTen2 = numbers.filter({(number: Int) -> Bool in
+    return number > 10
+    
+})
+print(overTen2)
