@@ -28,16 +28,35 @@ loggingExcute(targetFunc: dot)
 // 操作対象の配列
 let numbers = [11, 2, 5, -8, 0, 6]
 
+
+
 func isOverTen(number:Int)-> Bool{
     return number > 10
 }
 
+
+//高階関数
 let overTen = numbers.filter(isOverTen)
 print(overTen)
 
 //クロージャ
+//クロージャの基本形
 let overTen2 = numbers.filter({(number: Int) -> Bool in
     return number > 10
     
 })
 print(overTen2)
+
+//クロージャの省略形 ()を追い出す　　引数リストの最後の引数はクロージャの場合使えます
+let overTen3 = numbers.filter(){(number: Int) -> Bool in
+    return number > 10
+}
+print(overTen3)
+
+// 唯一の引数がクロージャであるため、filterメソッドから引数リストのカッコを省略
+let overTen4 = numbers.filter{(number: Int) -> Bool in
+    return number > 10
+}
+print("10より大きい数値:\(overTen4)")
+
+// クロージャの引数の型と戻り値の型を省略
